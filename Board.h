@@ -19,67 +19,20 @@ public:
 	int nowIndex;
 
 	Board() {
-		this->nowTurn = PLAYER1_TURN;
+		this->nowTurn = PLAYER1;
 		this->nowIndex = 1;
 
 		playerBoard = 0x0000000810000000;
 		opponentBoard = 0x0000001008000000;
 	}
-
-
 
 	void initBoard() {
-		this->nowTurn = PLAYER1_TURN;
+		this->nowTurn = PLAYER1;
 		this->nowIndex = 1;
 
 		playerBoard = 0x0000000810000000;
 		opponentBoard = 0x0000001008000000;
 	}
-	/*
-	void showBoard() {
-		cout << endl;
-		cout << " A B C D E F G H " << endl;
-
-		for (int y = 0; y < 8; y++) {
-			cout << y + 1;
-			for (int x = 0; x < 8; x++) {
-				if ((playerBoard >> 63 - (x + y * 8)) & 1 == 1) {
-					if (nowTurn == PLAYER1_TURN) cout << "œ";
-					else cout << "";
-				}
-				else if ((opponentBoard >> 63 - (x + y * 8)) & 1 == 1) {
-					if (nowTurn == PLAYER1_TURN) cout << "";
-					else cout << "œ";
-				}
-				else {
-					cout << " ";
-				}
-			}
-			cout << endl;
-		}
-	}*/
-/*	void showBoard() {
-		DrawGraph(0, 0, back, FALSE);
-		DrawGraph(480, 0, sideBack, FALSE);
-		for (int y = 0; y < 8; y++) {
-			for (int x = 0; x < 8; x++) {
-				int num = 63 - (x + y * 8);
-				if (((playerBoard >> num) & 1) == 1) {
-					if (nowTurn == PLAYER1_TURN) DrawGraph(x * 60, y * 60, pieces[0], TRUE);
-					else DrawGraph(x * 60, y * 60, pieces[1], TRUE);
-				}
-				else if (((opponentBoard >> num) & 1) == 1) {
-					if (nowTurn == PLAYER1_TURN) DrawGraph(x * 60, y * 60, pieces[1], TRUE);
-					else DrawGraph(x * 60, y * 60, pieces[0], TRUE);
-				}
-			}
-		}
-		int mw = GetDrawStringWidth(turnMsg.c_str(), turnMsg.size());
-//		DrawBox(192 - mw / 2 - 30, 172, 192 + mw / 2 + 30, 208, GetColor(200, 180, 150), TRUE);
-		DrawString(480 + 80 - mw / 2, 80, turnMsg.c_str(), GetColor(0, 0, 0));
-		ScreenFlip();
-	}*/
-
 
 	bool canPut(unsigned long long put) {
 		unsigned long long legalBoard = makeLegalBoard(this->playerBoard, this->opponentBoard);
@@ -129,14 +82,14 @@ public:
 		playerBoard = opponentBoard;
 		opponentBoard = tmp;
 
-		nowTurn = nowTurn * -1;
+		nowTurn = 1 - nowTurn;
 	}
 
 	void getResult(int *score) {
 //		cout << "p " << hex << playerBoard << "o " << hex << opponentBoard << endl;
 		int blackScore = bitCount(playerBoard);
 		int whiteScore = bitCount(opponentBoard);
-		if (this->nowTurn == PLAYER2_TURN) {
+		if (this->nowTurn == PLAYER2) {
 			int tmp = blackScore;
 			blackScore = whiteScore;
 			whiteScore = tmp;

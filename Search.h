@@ -21,9 +21,8 @@ unsigned long long randomPut();
 class Search {
 	int maxDepth;
 	int player;
-
+	int timeCount = 0;
 	unsigned long long bestPut;
-
 
 public:	
 	int method;
@@ -39,22 +38,33 @@ public:
 			if (method == MANUAL) {
 				put = inputPut();
 				if (board.canPut(put)) break;
-//				else cout << "Input Error" << endl;
-			}
-			else if (method == RANDOM) {
+			}else if (method == RANDOM) {
+				timeCount = GetNowCount();
 				put = randomPut();
 				if (board.canPut(put)) break;
-			}
-			else if (method == MINIMAX) {
+			}else if (method == MINIMAX) {
+				timeCount = GetNowCount();
 				int eval;
-				eval = miniMax(board, 1, maxDepth);
+				eval = miniMax(board, maxDepth);
 				put = bestPut;
+				if (!board.canPut(put)) {
+					put = randomPut();
+					if (board.canPut(put)) break;
+				}else break;
+			}else if (method == ALPHABETA) {
+				timeCount = GetNowCount();
+				int eval;
+				eval = alphaBeta(board, maxDepth, -99999, 99999);
+				put = bestPut;
+//				cout << "eval " << eval << endl;
+//				cout << "bestPut " << hex << bestPut << endl;
 				if (!board.canPut(put)) {
 					put = randomPut();
 					if (board.canPut(put)) break;
 				}else break;
 			}
 		}
+		while (GetNowCount() - timeCount <= TIMELIMIT) {}
 		return put;
 	}
 
@@ -71,11 +81,9 @@ public:
 					int num = 63 - (x + y * 8);
 					if (((board.playerBoard >> num) & 1) == 1){
 						playerBoardScore += scoreTable[x][y];
-//						cout << scoreTable[x][y] << endl;
 					}
 					else if (((board.opponentBoard >> num) & 1) == 1) {
 						opponentBoardScore += scoreTable[x][y];
-//						cout << scoreTable[x][y] << endl;
 					}
 				}
 			}
@@ -94,45 +102,85 @@ public:
 		return 0;
 	}
 
-	int miniMax(Board board, int turn, int depth) {
+	int miniMax(Board board, int depth) {
 		int i = 0;
-		if (turn == -1) board.swapBoard();
 		Board tmpBoard;
 		tmpBoard.nowIndex = board.nowIndex;
 		tmpBoard.nowTurn = board.nowTurn;
 		tmpBoard.opponentBoard = board.opponentBoard;
 		tmpBoard.playerBoard = board.playerBoard;
 
-		if (depth == 0 || board.isGameFinished())return eval(board);
+		if (depth == 0 || board.isGameFinished() || GetNowCount() - timeCount >= TIMELIMIT)return eval(board);
 
 		unsigned long long expandBoard[30];
 		int nodeNum = bitCount(makeLegalBoard(board.playerBoard, board.opponentBoard));
 
-		expandNode(board,expandBoard);
-		int bestEval = -100000;
+		expandNode(board, expandBoard);
+		int bestEval;
+		if (board.nowTurn == player) bestEval = -10000;
+		else bestEval = 10000;
+
 		int val;
 		for (i = 0; i < nodeNum; i++) {
 			tmpBoard.reverse(expandBoard[i]);
-//			tmpBoard.reverse(coordToBit(5,5));
-//			cout << hex << expandBoard[0] << endl;
-//			cout << hex << coordToBit(5, 5) << endl;
+			tmpBoard.swapBoard();
 //			tmpBoard.showBoard();
-			val = miniMax(tmpBoard, -1, depth - 1);
+			val = miniMax(tmpBoard, depth - 1);
 //			cout << "-----------" << endl;
 			tmpBoard.opponentBoard = board.opponentBoard;
 			tmpBoard.playerBoard = board.playerBoard;
+			tmpBoard.nowTurn = board.nowTurn;
+			tmpBoard.nowIndex = board.nowIndex;
 			if (board.nowTurn == player && bestEval < val) {
 				bestEval = val;
 				if (depth == maxDepth)bestPut = expandBoard[i];
 			}
-			if (board.nowTurn != player && bestEval < -val) {
-				bestEval = -val;
+			if (board.nowTurn != player && bestEval > val) {
+				bestEval = val;
 				if (depth == maxDepth)bestPut = expandBoard[i];
 			}
 		}
 		return bestEval;
 	}
+	int alphaBeta(Board board, int depth, int alpha, int beta) {
+		int i = 0;
+		Board tmpBoard;
+		tmpBoard.nowIndex = board.nowIndex;
+		tmpBoard.nowTurn = board.nowTurn;
+		tmpBoard.opponentBoard = board.opponentBoard;
+		tmpBoard.playerBoard = board.playerBoard;
 
+//		if (depth == 0 || board.isGameFinished() || GetNowCount() - timeCount >= TIMELIMIT)return eval(board);
+		if (depth == 0 || board.isGameFinished())return eval(board);
+
+		unsigned long long expandBoard[30];
+		int nodeNum = bitCount(makeLegalBoard(board.playerBoard, board.opponentBoard));
+
+		expandNode(board, expandBoard);
+
+		int val;
+		for (i = 0; (alpha < beta) && (i < nodeNum); i++) {
+			tmpBoard.reverse(expandBoard[i]);
+			tmpBoard.swapBoard();
+			//			tmpBoard.showBoard();
+			val = alphaBeta(tmpBoard, depth - 1, alpha, beta);
+			//			cout << "-----------" << endl;
+			tmpBoard.opponentBoard = board.opponentBoard;
+			tmpBoard.playerBoard = board.playerBoard;
+			tmpBoard.nowTurn = board.nowTurn;
+			tmpBoard.nowIndex = board.nowIndex;
+			if (board.nowTurn == player && alpha < val) {
+				alpha = val;
+				if (depth == maxDepth)bestPut = expandBoard[i];
+			}
+			if (board.nowTurn != player && beta > val) {
+				beta = val;
+				if (depth == maxDepth)bestPut = expandBoard[i];
+			}
+		}
+		if (board.nowTurn == player) return alpha;
+		else return beta;
+	}
 	void expandNode(Board board, unsigned long long *expandBoard) {
 		unsigned long long legalBoard = makeLegalBoard(board.playerBoard, board.opponentBoard);
 		int nodeNum = bitCount(legalBoard);
@@ -144,19 +192,9 @@ public:
 					break;
 				}
 			}
-//			cout << hex << expandBoard[i] << endl;
 		}
 	}
 };
-/*
-unsigned long long inputPut() {
-	string s;
-	cin >> s;
-	int x = s[0] - 'A';
-	int y = s[1] - '0' - 1;
-	unsigned long long put = coordToBit(x, y);
-	return put;
-}*/
 
 unsigned long long inputPut() {
 	unsigned long long put;
