@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Othello: Board.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Othello
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">Board.h ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ボードクラスと関連した関数のヘッダ  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;random&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
+</div>
+<p><a href="_board_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html">Board</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ボードを表現するクラス  <a href="class_board.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a32db61d380ea5f4a576e3e375ec68a9c"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_board_8h.html#a32db61d380ea5f4a576e3e375ec68a9c">coordToBit</a> (int x, int y)</td></tr>
+<tr class="memdesc:a32db61d380ea5f4a576e3e375ec68a9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">座標をビットに変換  <a href="#a32db61d380ea5f4a576e3e375ec68a9c">[詳解]</a><br /></td></tr>
+<tr class="separator:a32db61d380ea5f4a576e3e375ec68a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a250344bc89c41ce48fbe2f8acd71ffe5"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_board_8h.html#a250344bc89c41ce48fbe2f8acd71ffe5">transfer</a> (unsigned long long put, int i)</td></tr>
+<tr class="memdesc:a250344bc89c41ce48fbe2f8acd71ffe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">反転位置を求める  <a href="#a250344bc89c41ce48fbe2f8acd71ffe5">[詳解]</a><br /></td></tr>
+<tr class="separator:a250344bc89c41ce48fbe2f8acd71ffe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71d930fbdeaf700fb9a341557e7ab72b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_board_8h.html#a71d930fbdeaf700fb9a341557e7ab72b">bitCount</a> (unsigned long long num)</td></tr>
+<tr class="memdesc:a71d930fbdeaf700fb9a341557e7ab72b"><td class="mdescLeft">&#160;</td><td class="mdescRight">立っているビットの数を数える  <a href="#a71d930fbdeaf700fb9a341557e7ab72b">[詳解]</a><br /></td></tr>
+<tr class="separator:a71d930fbdeaf700fb9a341557e7ab72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c20241ff57eaa5520d748bbfd551c3"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_board_8h.html#ab6c20241ff57eaa5520d748bbfd551c3">makeLegalBoard</a> (unsigned long long playerBoard, unsigned long long opponentBoard)</td></tr>
+<tr class="memdesc:ab6c20241ff57eaa5520d748bbfd551c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">合法手ボードの作成  <a href="#ab6c20241ff57eaa5520d748bbfd551c3">[詳解]</a><br /></td></tr>
+<tr class="separator:ab6c20241ff57eaa5520d748bbfd551c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>ボードクラスと関連した関数のヘッダ </p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a71d930fbdeaf700fb9a341557e7ab72b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71d930fbdeaf700fb9a341557e7ab72b">&#9670;&nbsp;</a></span>bitCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bitCount </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>立っているビットの数を数える </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>数えたいビット </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>立っているビット </dd></dl>
+
+</div>
+</div>
+<a id="a32db61d380ea5f4a576e3e375ec68a9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32db61d380ea5f4a576e3e375ec68a9c">&#9670;&nbsp;</a></span>coordToBit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long long coordToBit </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>座標をビットに変換 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>x座標（横） </td></tr>
+    <tr><td class="paramname">y</td><td>y座標（縦） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>指し手 </dd></dl>
+
+</div>
+</div>
+<a id="ab6c20241ff57eaa5520d748bbfd551c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6c20241ff57eaa5520d748bbfd551c3">&#9670;&nbsp;</a></span>makeLegalBoard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long long makeLegalBoard </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long&#160;</td>
+          <td class="paramname"><em>playerBoard</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long long&#160;</td>
+          <td class="paramname"><em>opponentBoard</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>合法手ボードの作成 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">playerBoard</td><td>手番プレイヤーのボード </td></tr>
+    <tr><td class="paramname">opponentBoard</td><td>対戦相手プレイヤーのボード </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>合法手ボード </dd></dl>
+
+</div>
+</div>
+<a id="a250344bc89c41ce48fbe2f8acd71ffe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a250344bc89c41ce48fbe2f8acd71ffe5">&#9670;&nbsp;</a></span>transfer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long long transfer </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long long&#160;</td>
+          <td class="paramname"><em>put</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>反転位置を求める </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">put</td><td>指し手 </td></tr>
+    <tr><td class="paramname">i</td><td>方向 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>反転位置 </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

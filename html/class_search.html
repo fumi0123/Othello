@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Othello: Search クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Othello
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="class_search-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">Search クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>探索を行うクラス  
+ <a href="class_search.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_search_8h_source.html">Search.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:af667d7239ce5bcc07130a14f2aa60e21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search.html#af667d7239ce5bcc07130a14f2aa60e21">Search</a> (int player, int maxDepth, int <a class="el" href="class_search.html#a054d85756a7f57fe3e36ced2f91fd059">method</a>)</td></tr>
+<tr class="memdesc:af667d7239ce5bcc07130a14f2aa60e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">探索クラスのコンストラクタ  <a href="#af667d7239ce5bcc07130a14f2aa60e21">[詳解]</a><br /></td></tr>
+<tr class="separator:af667d7239ce5bcc07130a14f2aa60e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b87f03138aff1c1b0ec6bb53dccee91"><td class="memItemLeft" align="right" valign="top">unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search.html#a4b87f03138aff1c1b0ec6bb53dccee91">think</a> (<a class="el" href="class_board.html">Board</a> board)</td></tr>
+<tr class="memdesc:a4b87f03138aff1c1b0ec6bb53dccee91"><td class="mdescLeft">&#160;</td><td class="mdescRight">指し手を決める関数  <a href="#a4b87f03138aff1c1b0ec6bb53dccee91">[詳解]</a><br /></td></tr>
+<tr class="separator:a4b87f03138aff1c1b0ec6bb53dccee91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a702b78105ebe828a962e9b27e57deb38"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search.html#a702b78105ebe828a962e9b27e57deb38">eval</a> (<a class="el" href="class_board.html">Board</a> board)</td></tr>
+<tr class="memdesc:a702b78105ebe828a962e9b27e57deb38"><td class="mdescLeft">&#160;</td><td class="mdescRight">盤面の評価値を取得する関数  <a href="#a702b78105ebe828a962e9b27e57deb38">[詳解]</a><br /></td></tr>
+<tr class="separator:a702b78105ebe828a962e9b27e57deb38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268903aa97a3e1ad47e404b8ed7140ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search.html#a268903aa97a3e1ad47e404b8ed7140ac">alphaBeta</a> (<a class="el" href="class_board.html">Board</a> board, int depth, int alpha, int beta)</td></tr>
+<tr class="memdesc:a268903aa97a3e1ad47e404b8ed7140ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">αβ法  <a href="#a268903aa97a3e1ad47e404b8ed7140ac">[詳解]</a><br /></td></tr>
+<tr class="separator:a268903aa97a3e1ad47e404b8ed7140ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae52e3dab738eab0b77d2860eddeb2a88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search.html#ae52e3dab738eab0b77d2860eddeb2a88">expandNode</a> (<a class="el" href="class_board.html">Board</a> board, unsigned long long *expandBoard)</td></tr>
+<tr class="memdesc:ae52e3dab738eab0b77d2860eddeb2a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">ノードを広げるための関数  <a href="#ae52e3dab738eab0b77d2860eddeb2a88">[詳解]</a><br /></td></tr>
+<tr class="separator:ae52e3dab738eab0b77d2860eddeb2a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a054d85756a7f57fe3e36ced2f91fd059"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_search.html#a054d85756a7f57fe3e36ced2f91fd059">method</a></td></tr>
+<tr class="separator:a054d85756a7f57fe3e36ced2f91fd059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>探索を行うクラス </p>
+<p>使用する戦略に合わせて探索を行い指し手を決める．プレイヤー毎に宣言する． </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="af667d7239ce5bcc07130a14f2aa60e21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af667d7239ce5bcc07130a14f2aa60e21">&#9670;&nbsp;</a></span>Search()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Search::Search </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxDepth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>method</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>探索クラスのコンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>プレイヤー番号．黒なら0，白なら1． </td></tr>
+    <tr><td class="paramname">maxDepth</td><td>探索深さ </td></tr>
+    <tr><td class="paramname">method</td><td>使用戦略 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a268903aa97a3e1ad47e404b8ed7140ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a268903aa97a3e1ad47e404b8ed7140ac">&#9670;&nbsp;</a></span>alphaBeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Search::alphaBeta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_board.html">Board</a>&#160;</td>
+          <td class="paramname"><em>board</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>depth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>alpha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>beta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>αβ法 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>Boardインスタンス </td></tr>
+    <tr><td class="paramname">depth</td><td>残りの探索深さ </td></tr>
+    <tr><td class="paramname">alpha</td><td>α値 </td></tr>
+    <tr><td class="paramname">beta</td><td>β値 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>int 最善手の評価値</dd></dl>
+<p>着手可能な手から盤面を作る．</p>
+<p>再帰を用い，最奥まで探索した後に評価値を押し上げていく．</p>
+<p>α値とβ値を元に枝狩りをすることで計算回数を減らしている </p>
+
+</div>
+</div>
+<a id="a702b78105ebe828a962e9b27e57deb38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a702b78105ebe828a962e9b27e57deb38">&#9670;&nbsp;</a></span>eval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Search::eval </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_board.html">Board</a>&#160;</td>
+          <td class="paramname"><em>board</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>盤面の評価値を取得する関数 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>Boardインスタンス </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>int 評価値</dd></dl>
+<p>序盤，中盤は自分のマスの評価値 - 相手のマスの評価値±着手可能な手の数．</p>
+<p>終盤は自分の石の数 - 相手の石の数 </p>
+
+</div>
+</div>
+<a id="ae52e3dab738eab0b77d2860eddeb2a88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae52e3dab738eab0b77d2860eddeb2a88">&#9670;&nbsp;</a></span>expandNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Search::expandNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_board.html">Board</a>&#160;</td>
+          <td class="paramname"><em>board</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long long *&#160;</td>
+          <td class="paramname"><em>expandBoard</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ノードを広げるための関数 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>Boardインスタンス </td></tr>
+    <tr><td class="paramname">expandBoard</td><td>指すことが可能な手を保存する配列 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4b87f03138aff1c1b0ec6bb53dccee91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b87f03138aff1c1b0ec6bb53dccee91">&#9670;&nbsp;</a></span>think()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long long Search::think </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_board.html">Board</a>&#160;</td>
+          <td class="paramname"><em>board</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>指し手を決める関数 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>Boardインスタンス </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>unsigned long long 指し手</dd></dl>
+<p>指し手を決める関数．使用戦略によって決め方が変わる．</p>
+<p>戦略が操作以外の場合，一定時間が経過するまで指し手を返さない． </p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a054d85756a7f57fe3e36ced2f91fd059"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a054d85756a7f57fe3e36ced2f91fd059">&#9670;&nbsp;</a></span>method</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Search::method</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="_search_8h_source.html">Search.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

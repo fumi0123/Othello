@@ -1,0 +1,190 @@
+\hypertarget{class_board}{}\section{Board クラス}
+\label{class_board}\index{Board@{Board}}
+
+
+ボードを表現するクラス  
+
+
+
+
+{\ttfamily \#include $<$Board.\+h$>$}
+
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_board_a9ee491d4fea680cf69b033374a9fdfcb}{Board}} ()
+\begin{DoxyCompactList}\small\item\em ボードクラスのコンストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_a67cf113c045c8aec1565f48eef8e5770}{init\+Board}} ()
+\begin{DoxyCompactList}\small\item\em ボードを初期状態に戻す関数 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_board_a34d2b9e0e4ef4e397741607072f6f88d}{can\+Put}} (unsigned long long put)
+\begin{DoxyCompactList}\small\item\em 指すことが可能かの判定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_abd32a0744a94da0c111d067a062012c4}{reverse}} (unsigned long long put)
+\begin{DoxyCompactList}\small\item\em 指し手を反映 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_board_a451dfe3ec3bdc5bac1a7e78637c9cb3d}{is\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em パスの判定．手番プレイヤーのみが置けない場合． \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_board_a2572833882a68b3293fe15842b76c33f}{is\+Game\+Finished}} ()
+\begin{DoxyCompactList}\small\item\em ゲーム終了判定．両プレイヤー共置けない場合． \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_ab9840889c8175263c935c45ab4ea8aad}{swap\+Board}} ()
+\begin{DoxyCompactList}\small\item\em 手番を入れ替える \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_acca28e5720f3d476264e18bf2be4e8ad}{get\+Result}} (int $\ast$score)
+\begin{DoxyCompactList}\small\item\em 結果の取得 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long long \mbox{\hyperlink{class_board_a3f5dd6aed9346e21df3ad7a49eb4aa33}{player\+Board}} = 0
+\item 
+unsigned long long \mbox{\hyperlink{class_board_a4bfa03bee32336269f5d9d2d259a1d1f}{opponent\+Board}} = 0
+\item 
+int \mbox{\hyperlink{class_board_afaab59020384a4975249c9b240c65b14}{now\+Turn}}
+\item 
+int \mbox{\hyperlink{class_board_a828fcce6e6515fde763ae6b05474f2d9}{now\+Index}}
+\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+ボードを表現するクラス 
+
+ビットボードを用いた盤面を表現するクラス． 
+
+\subsection{構築子と解体子}
+\mbox{\Hypertarget{class_board_a9ee491d4fea680cf69b033374a9fdfcb}\label{class_board_a9ee491d4fea680cf69b033374a9fdfcb}} 
+\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\subsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily Board\+::\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ボードクラスのコンストラクタ 
+
+
+
+\subsection{関数詳解}
+\mbox{\Hypertarget{class_board_a34d2b9e0e4ef4e397741607072f6f88d}\label{class_board_a34d2b9e0e4ef4e397741607072f6f88d}} 
+\index{Board@{Board}!can\+Put@{can\+Put}}
+\index{can\+Put@{can\+Put}!Board@{Board}}
+\subsubsection{\texorpdfstring{can\+Put()}{canPut()}}
+{\footnotesize\ttfamily bool Board\+::can\+Put (\begin{DoxyParamCaption}\item[{unsigned long long}]{put }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+指すことが可能かの判定 
+
+
+\begin{DoxyParams}{引数}
+{\em put} & 指し手 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+bool 指すことが可能なら\+True，不可能ならfalse 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_acca28e5720f3d476264e18bf2be4e8ad}\label{class_board_acca28e5720f3d476264e18bf2be4e8ad}} 
+\index{Board@{Board}!get\+Result@{get\+Result}}
+\index{get\+Result@{get\+Result}!Board@{Board}}
+\subsubsection{\texorpdfstring{get\+Result()}{getResult()}}
+{\footnotesize\ttfamily void Board\+::get\+Result (\begin{DoxyParamCaption}\item[{int $\ast$}]{score }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+結果の取得 
+
+
+\begin{DoxyParams}{引数}
+{\em score} & スコア \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_board_a67cf113c045c8aec1565f48eef8e5770}\label{class_board_a67cf113c045c8aec1565f48eef8e5770}} 
+\index{Board@{Board}!init\+Board@{init\+Board}}
+\index{init\+Board@{init\+Board}!Board@{Board}}
+\subsubsection{\texorpdfstring{init\+Board()}{initBoard()}}
+{\footnotesize\ttfamily void Board\+::init\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ボードを初期状態に戻す関数 
+
+\mbox{\Hypertarget{class_board_a2572833882a68b3293fe15842b76c33f}\label{class_board_a2572833882a68b3293fe15842b76c33f}} 
+\index{Board@{Board}!is\+Game\+Finished@{is\+Game\+Finished}}
+\index{is\+Game\+Finished@{is\+Game\+Finished}!Board@{Board}}
+\subsubsection{\texorpdfstring{is\+Game\+Finished()}{isGameFinished()}}
+{\footnotesize\ttfamily bool Board\+::is\+Game\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ゲーム終了判定．両プレイヤー共置けない場合． 
+
+\begin{DoxyReturn}{戻り値}
+終了ならtrue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_a451dfe3ec3bdc5bac1a7e78637c9cb3d}\label{class_board_a451dfe3ec3bdc5bac1a7e78637c9cb3d}} 
+\index{Board@{Board}!is\+Pass@{is\+Pass}}
+\index{is\+Pass@{is\+Pass}!Board@{Board}}
+\subsubsection{\texorpdfstring{is\+Pass()}{isPass()}}
+{\footnotesize\ttfamily bool Board\+::is\+Pass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+パスの判定．手番プレイヤーのみが置けない場合． 
+
+\begin{DoxyReturn}{戻り値}
+パスならtrue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_abd32a0744a94da0c111d067a062012c4}\label{class_board_abd32a0744a94da0c111d067a062012c4}} 
+\index{Board@{Board}!reverse@{reverse}}
+\index{reverse@{reverse}!Board@{Board}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}}
+{\footnotesize\ttfamily void Board\+::reverse (\begin{DoxyParamCaption}\item[{unsigned long long}]{put }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+指し手を反映 
+
+
+\begin{DoxyParams}{引数}
+{\em put} & 指し手\\
+\hline
+\end{DoxyParams}
+指し手を盤面に反映させる．
+
+挟んだ石をひっくり返す． \mbox{\Hypertarget{class_board_ab9840889c8175263c935c45ab4ea8aad}\label{class_board_ab9840889c8175263c935c45ab4ea8aad}} 
+\index{Board@{Board}!swap\+Board@{swap\+Board}}
+\index{swap\+Board@{swap\+Board}!Board@{Board}}
+\subsubsection{\texorpdfstring{swap\+Board()}{swapBoard()}}
+{\footnotesize\ttfamily void Board\+::swap\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+手番を入れ替える 
+
+
+
+\subsection{メンバ詳解}
+\mbox{\Hypertarget{class_board_a828fcce6e6515fde763ae6b05474f2d9}\label{class_board_a828fcce6e6515fde763ae6b05474f2d9}} 
+\index{Board@{Board}!now\+Index@{now\+Index}}
+\index{now\+Index@{now\+Index}!Board@{Board}}
+\subsubsection{\texorpdfstring{now\+Index}{nowIndex}}
+{\footnotesize\ttfamily int Board\+::now\+Index}
+
+\mbox{\Hypertarget{class_board_afaab59020384a4975249c9b240c65b14}\label{class_board_afaab59020384a4975249c9b240c65b14}} 
+\index{Board@{Board}!now\+Turn@{now\+Turn}}
+\index{now\+Turn@{now\+Turn}!Board@{Board}}
+\subsubsection{\texorpdfstring{now\+Turn}{nowTurn}}
+{\footnotesize\ttfamily int Board\+::now\+Turn}
+
+\mbox{\Hypertarget{class_board_a4bfa03bee32336269f5d9d2d259a1d1f}\label{class_board_a4bfa03bee32336269f5d9d2d259a1d1f}} 
+\index{Board@{Board}!opponent\+Board@{opponent\+Board}}
+\index{opponent\+Board@{opponent\+Board}!Board@{Board}}
+\subsubsection{\texorpdfstring{opponent\+Board}{opponentBoard}}
+{\footnotesize\ttfamily unsigned long long Board\+::opponent\+Board = 0}
+
+\mbox{\Hypertarget{class_board_a3f5dd6aed9346e21df3ad7a49eb4aa33}\label{class_board_a3f5dd6aed9346e21df3ad7a49eb4aa33}} 
+\index{Board@{Board}!player\+Board@{player\+Board}}
+\index{player\+Board@{player\+Board}!Board@{Board}}
+\subsubsection{\texorpdfstring{player\+Board}{playerBoard}}
+{\footnotesize\ttfamily unsigned long long Board\+::player\+Board = 0}
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_board_8h}{Board.\+h}}\end{DoxyCompactItemize}
