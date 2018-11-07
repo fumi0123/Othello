@@ -149,13 +149,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Board.h" />
-    <ClInclude Include="Gui.h" />
-    <ClInclude Include="Mydef.h" />
-    <ClInclude Include="Search.h" />
+    <ClCompile Include="Source\Reversi.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Reversi.cpp" />
+    <ClInclude Include="Source\Board.h" />
+    <ClInclude Include="Source\Gui.h" />
+    <ClInclude Include="Source\Mydef.h" />
+    <ClInclude Include="Source\Search.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
