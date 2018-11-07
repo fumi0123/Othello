@@ -1,7 +1,7 @@
 /**
- * @file Othello.cpp
- * @brief メインファイル
- */
+* @file Othello.cpp
+* @brief メインファイル
+*/
 
 #include <iostream>
 #include "Mydef.h"
@@ -12,9 +12,9 @@
 using namespace std;
 
 /**
- * @brief main関数
- * @return 0
- */
+* @brief main関数
+* @return 0
+*/
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	Gui	gui; // GUIクラス
 
@@ -28,7 +28,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	Search player1Search(PLAYER1, menuItem[3], menuItem[1]); // Player1の探索クラス
 	Search player2Search(PLAYER2, menuItem[4], menuItem[2]); // Player2の探索クラス
 
-	// GUIの表示
+															 // GUIの表示
 	gui.setPlayerMsg(player1Search.method, player2Search.method);
 	gui.setTurnMsg(board.nowTurn, 0);
 	gui.setScoreMsg(board);
@@ -43,19 +43,21 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			// パスが起こらない（＝まだ指すことができる手がある）なら指し手を決める
 			if (!board.isPass()) {
 				// 現在ターンのプレイヤーの指し手を決定
-				if(board.nowTurn == PLAYER1) put = player1Search.think(board);
+				if (board.nowTurn == PLAYER1) put = player1Search.think(board);
 				else put = player2Search.think(board);
 
 				board.reverse(put);		// 指し手を盤面に反映する
 				gui.setScoreMsg(board);	// スコアを更新
 				board.swapBoard();		// 手番を入れ替える
 				gui.setTurnMsg(board.nowTurn, 0);
-			}else{
+			}
+			else {
 				// パスが起きたら手番を入れ替える
 				gui.setTurnMsg(board.nowTurn, 1);
 				board.swapBoard();
 			}
-		}else{
+		}
+		else {
 			// ゲームが終了のためスコアを取得．結果を表示．
 			int score[2] = {};
 			board.getResult(score);
