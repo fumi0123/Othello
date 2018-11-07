@@ -42,6 +42,8 @@ public:
 
 		SetFontSize(20);		// 文字サイズを20に変更
 		SetFontThickness(2);	// 文字太さを2に変更
+
+		SetWindowUserCloseEnableFlag(false);
 	}
 
 	/**
